@@ -1,0 +1,17 @@
+.container{
+  min-height: 100vh;
+}
+
+.top{
+  height: 50vh;
+  background-color:gainsboro;
+  position: relative;
+}
+
+.bottom{
+  position: absolute;
+  left: 23%;
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+}
