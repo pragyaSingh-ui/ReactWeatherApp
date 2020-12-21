@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CitiesCard from './CitiesCard';
 
 function CityData(props){
     
-    const [weather, setWeather] = useState([]);
-    const APIKEY = '89c63e7e9ccf2765eae23696a3415e4a';
+    // const [weather, setWeather] = useState([]);
+    const APIKEY = 'eec80305f99a1e51b545d2b0b28fa3e7';
     const api = 'https://api.openweathermap.org/data/2.5/weather?q='+props.cityName+'&appid='+APIKEY;
 
 async function weatherData(){
-    const data = await fetch(api).then(res => res.json()).then((data) =>data);
+     return await fetch(api).then(res => res.json());
 
-    setWeather({data:data});
+    //setWeather({data:data});
 }
-weatherData();
-if(weather.data !== undefined){
+const data = weatherData();
+
+if(data !== undefined){
     return (
-        <CitiesCard data = {weather.data}></CitiesCard>
+        <CitiesCard data = {data}></CitiesCard>
     )
 }else{
     return <div></div>
